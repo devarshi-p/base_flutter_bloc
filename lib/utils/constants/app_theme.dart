@@ -1,4 +1,3 @@
-import 'package:base_flutter_bloc/base/src_bloc.dart';
 import 'package:base_flutter_bloc/utils/common_utils/app_widgets.dart';
 import 'package:base_flutter_bloc/utils/common_utils/shared_pref.dart';
 import 'package:base_flutter_bloc/utils/constants/app_colors.dart';
@@ -7,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AppTheme extends BaseBloc {
+class AppTheme {
+
   SystemUiOverlayStyle get uiOverlayStyle =>
       lightMode() ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark;
 

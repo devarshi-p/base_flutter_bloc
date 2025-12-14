@@ -1,7 +1,6 @@
 import 'package:base_flutter_bloc/utils/enum_to_string/enum_to_string.dart';
 
 import '../common_utils/common_utils.dart';
-import '../widgets/terminologies_utils.dart';
 
 enum ScreenType { drawer, login, normal, splash, language }
 
@@ -188,17 +187,3 @@ List<String> enumToList<T>(List<T> enumValues) {
   }).toList();
 }
 
-String attendanceStatusString(String status) {
-  String convertedStatus = "";
-  if (status == EnumToString.convertToString(AttendanceStatus.Absence)) {
-    convertedStatus = string("attendance.absence_type_absence");
-  } else if (status ==
-      EnumToString.convertToString(AttendanceStatus.Presence)) {
-    convertedStatus = string("attendance.absence_type_presence");
-  } else if (status == EnumToString.convertToString(AttendanceStatus.Late)) {
-    convertedStatus = tardyLiteral();
-  } else {
-    convertedStatus = status;
-  }
-  return convertedStatus;
-}

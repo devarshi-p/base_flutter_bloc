@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:base_flutter_bloc/base/component/base_bloc.dart';
 import 'package:base_flutter_bloc/base/component/base_state.dart';
-import 'package:base_flutter_bloc/bloc/app_bloc/app_bloc.dart';
 import 'package:base_flutter_bloc/bloc/theme/theme_bloc.dart';
 import 'package:base_flutter_bloc/utils/common_utils/app_widgets.dart';
 import 'package:base_flutter_bloc/utils/constants/app_colors.dart';
@@ -31,9 +30,7 @@ abstract class BasePageState<T extends BasePage, B extends BaseBloc>
   final GlobalKey<RefreshIndicatorState> _refreshKey =
       GlobalKey<RefreshIndicatorState>();
 
-  B get getBloc;
-
-  AppBloc get appBloc => context.read<AppBloc>();
+  B get getBloc => context.read<B>();
 
   ThemeBloc get themeBloc => context.read<ThemeBloc>();
 
@@ -305,12 +302,6 @@ abstract class BasePageState<T extends BasePage, B extends BaseBloc>
 
   hideLoader() {
     context.loaderOverlay.hide();
-  }
-
-  @override
-  void dispose() {
-    getBloc.close();
-    super.dispose();
   }
 
   void onBackPressed(bool didPop, BuildContext context) {

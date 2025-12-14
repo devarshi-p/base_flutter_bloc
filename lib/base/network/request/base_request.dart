@@ -13,14 +13,6 @@ abstract class BaseRequest {
         "Content-Type": "application/json",
         "Cookie": "_culture_main=${getLanguage()}",
         "Accept": "application/json",
-        "X-Institute-Tenant": ((getRequestProperties() == null)
-            ? ''
-            : getRequestProperties()!.instituteId),
-        "X-Institute-Period": (periodId == null)
-            ? ((getRequestProperties() == null)
-                ? ''
-                : getRequestProperties()!.periodCode)
-            : periodId!,
       };
 
   Map<String, dynamic> get queryParameters => {};

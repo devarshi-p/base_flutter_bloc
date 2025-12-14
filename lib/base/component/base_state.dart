@@ -14,7 +14,11 @@ abstract class BaseState<T> extends Equatable {
   });
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [
+    data,
+    onRetry,
+    errorMessage,
+  ];
 }
 
 class InitialState extends BaseState {

@@ -29,10 +29,3 @@ String removeHtmlTags(String input) {
   return input.replaceAll(regex, '');
 }
 
-String getFullName(String? firstname, String? lastname) {
-  if (getNameSetting()) {
-    return "$lastname $firstname";
-  } else {
-    return "$firstname $lastname";
-  }
-}
